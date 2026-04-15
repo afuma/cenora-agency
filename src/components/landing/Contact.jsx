@@ -17,8 +17,9 @@ const serviceOptions = [
 ];
 
 const infos = [
-  { icon: Phone, label: 'Téléphone', value: '01 23 45 67 89', sub: 'Lun-Ven, 9h-18h' },
-  { icon: Mail, label: 'Email', value: 'contact@digipulse.fr', sub: 'Réponse sous 24h' },
+  { icon: Phone, label: 'Téléphone Lisieux', value: '06 04 01 43 63', sub: 'Lun-Ven, 9h-18h' },
+  { icon: Phone, label: 'Téléphone Carcassonne', value: '07 80 43 98 22', sub: 'Lun-Ven, 9h-18h' },
+  { icon: Mail, label: 'Email', value: 'contact@cenora.fr', sub: 'Réponse sous 24h' },
   { icon: Clock, label: 'Audit gratuit', value: 'Sans engagement', sub: '30 minutes suffisent' },
 ];
 

@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import AnimatedBackground from './AnimatedBackground';
 
 const trust = [
-  { icon: Users, value: '10+', label: 'Clients accompagnés' },
-  { icon: Star, value: '4.9/5', label: 'Avis clients' },
-  { icon: TrendingUp, value: '+300%', label: 'Trafic moyen gagné' },
+  { icon: Users, value: 'Sur-mesure', label: 'Chaque projet est unique' },
+  { icon: Star, value: 'Humain', label: 'Un vrai interlocuteur dédié' },
+  { icon: TrendingUp, value: 'Orienté résultats', label: 'Méthode éprouvée' },
 ];
 
 const bullets = [

@@ -33,7 +33,7 @@ export default function Footer() {
               <div className="w-8 h-8 rounded-xl bg-primary/30 flex items-center justify-center">
                 <Zap className="w-4 h-4 text-primary" style={{color:'hsl(214,89%,70%)'}} />
               </div>
-              <span className="text-lg font-bold text-white">DigiPulse</span>
+              <span className="text-lg font-bold text-white">Cenora</span>
             </div>
             <p className="text-sm text-white/50 leading-relaxed">
               Agence digitale spécialisée en création de sites web et référencement local pour indépendants, TPE et PME.
@@ -41,7 +41,7 @@ export default function Footer() {
             <div className="mt-4 text-sm text-white/50">
               <p>📍 Paris, France</p>
               <p>📞 01 23 45 67 89</p>
-              <p>✉️ contact@digipulse.fr</p>
+              <p>✉️ contact@Cenora.fr</p>
             </div>
           </div>
 
@@ -80,7 +80,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-2">
-          <p className="text-xs text-white/40">© {new Date().getFullYear()} DigiPulse. Tous droits réservés.</p>
+          <p className="text-xs text-white/40">© {new Date().getFullYear()} Cenora. Tous droits réservés.</p>
           <p className="text-xs text-white/40">Fait avec ❤️ en France</p>
         </div>
       </div>
