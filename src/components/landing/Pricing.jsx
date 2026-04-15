@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, ArrowRight, Phone } from 'lucide-react';
+import { Check, X, ArrowRight, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 import AnimatedBackground from './AnimatedBackground';
 
@@ -11,14 +11,14 @@ const plans = [
     pages: 'Jusqu\'à 5 pages',
     delay: '~2 semaines',
     features: [
-      'Site vitrine responsive',
-      'Design personnalisé',
-      'Formulaire de contact',
-      'Optimisation SEO de base',
-      'Hébergement & nom de domaine inclus',
-      'Référencement local Google Maps',
-      'Blog intégré',
-      'Suivi mensuel dédié',
+      { text: 'Site vitrine responsive', included: true },
+      { text: 'Design personnalisé', included: true },
+      { text: 'Formulaire de contact', included: true },
+      { text: 'Optimisation SEO de base', included: true },
+      { text: 'Hébergement & nom de domaine inclus', included: true },
+      { text: 'Référencement local Google Maps', included: false },
+      { text: 'Blog intégré', included: false },
+      { text: 'Suivi mensuel dédié', included: false },
     ],
     popular: false,
     color: 'border-border',
@@ -30,14 +30,14 @@ const plans = [
     pages: 'Jusqu\'à 10 pages',
     delay: '~3 semaines',
     features: [
-      'Site vitrine premium responsive',
-      'Design sur-mesure avancé',
-      'Formulaire & prise de RDV en ligne',
-      'SEO avancé (15 mots-clés ciblés)',
-      'Référencement local & Google Maps',
-      'Hébergement, domaine & SSL inclus',
-      'Blog intégré',
-      'Suivi mensuel dédié',
+      { text: 'Site vitrine premium responsive', included: true },
+      { text: 'Design sur-mesure avancé', included: true },
+      { text: 'Formulaire & prise de RDV en ligne', included: true },
+      { text: 'SEO avancé (15 mots-clés ciblés)', included: true },
+      { text: 'Référencement local & Google Maps', included: true },
+      { text: 'Hébergement, domaine & SSL inclus', included: true },
+      { text: 'Blog intégré', included: true },
+      { text: 'Suivi mensuel dédié', included: false },
     ],
     popular: true,
     color: 'border-primary/30',
@@ -49,14 +49,14 @@ const plans = [
     pages: 'Pages illimitées',
     delay: '~4 semaines',
     features: [
-      'Site complet sur-mesure',
-      'Branding & identité visuelle',
-      'Fonctionnalités avancées (e-shop, espace client…)',
-      'SEO premium (30+ mots-clés)',
-      'Référencement local multi-zones',
-      'Hébergement premium + CDN + SSL',
-      'Blog + stratégie de contenu',
-      'Suivi mensuel dédié + reporting',
+      { text: 'Site complet sur-mesure', included: true },
+      { text: 'Branding & identité visuelle', included: true },
+      { text: 'Fonctionnalités avancées (e-shop, espace client…)', included: true },
+      { text: 'SEO premium (30+ mots-clés)', included: true },
+      { text: 'Référencement local multi-zones', included: true },
+      { text: 'Hébergement premium + CDN + SSL', included: true },
+      { text: 'Blog + stratégie de contenu', included: true },
+      { text: 'Suivi mensuel dédié + reporting', included: true },
     ],
     popular: false,
     color: 'border-border',
@@ -86,12 +86,65 @@ export default function Pricing() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="flex items-center justify-center gap-2 mb-12"
+          className="flex items-center justify-center gap-2 mb-8"
         >
           <Phone className="w-4 h-4 text-primary" />
           <p className="text-sm text-muted-foreground">
             Tarif personnalisé selon votre projet — contactez-nous pour un devis gratuit et sans engagement.
           </p>
+        </motion.div>
+
+        {/* Subscription banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto mb-12"
+        >
+          <div className="card-soft rounded-2xl p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center">
+                <Check className="w-6 h-6 text-white" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-lg font-bold text-foreground mb-2">
+                  Abonnement maintenance optionnel : <span className="text-blue-600">50€/mois</span>
+                </h3>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Recommandé pour une tranquillité totale et un site toujours performant
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <div className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                    <span className="text-sm text-foreground">Nom de domaine inclus</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                    <span className="text-sm text-foreground">Hébergement professionnel</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                    <span className="text-sm text-foreground">Maintenance technique</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                    <span className="text-sm text-foreground">Support client prioritaire</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                    <span className="text-sm text-foreground">Modifications mineures</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                    <span className="text-sm text-foreground">Sauvegardes régulières</span>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground mt-3 italic">
+                  Sans abonnement : guide numérique complet fourni pour gérer votre site en autonomie
+                </p>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -128,8 +181,14 @@ export default function Pricing() {
               <div className="space-y-2.5 mb-7">
                 {plan.features.map((feature, j) => (
                   <div key={j} className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-primary flex-shrink-0" />
-                    <span className="text-sm text-foreground/80">{feature}</span>
+                    {feature.included ? (
+                      <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                    ) : (
+                      <X className="w-4 h-4 text-muted-foreground/30 flex-shrink-0" />
+                    )}
+                    <span className={`text-sm ${feature.included ? 'text-foreground/80' : 'text-muted-foreground/40'}`}>
+                      {feature.text}
+                    </span>
                   </div>
                 ))}
               </div>

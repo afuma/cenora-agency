@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, ArrowRight } from 'lucide-react';
+import { ExternalLink, ArrowRight, Target, Wrench, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const projects = [
@@ -101,25 +101,45 @@ export default function Portfolio() {
                   alt={p.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <span className={`absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full ${p.tagColor}`}>
                   {p.tag}
                 </span>
+                {/* Title and category on image */}
+                <div className="absolute bottom-3 left-3 right-3">
+                  <h3 className="font-bold text-white text-lg mb-1">{p.title}</h3>
+                  <span className="text-xs text-white/90 italic">{p.category}</span>
+                </div>
               </div>
 
               {/* Content */}
               <div className="p-5">
-                <div className="flex items-start justify-between mb-2">
+                {/* Objectif */}
+                <div className="flex items-start gap-2 mb-3">
+                  <Target className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h3 className="font-bold text-foreground">{p.title}</h3>
-                    <span className="text-xs text-muted-foreground">{p.category}</span>
+                    <p className="text-xs font-semibold text-blue-600 uppercase mb-1">Objectif</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{p.description.replace('Objectif : ', '')}</p>
                   </div>
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-2">{p.description}</p>
-                <p className="text-sm font-medium text-foreground mb-2">Réalisation</p>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-2">{p.details}</p>
-                <p className="text-sm font-medium text-foreground mb-2">Ce que ça démontre</p>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{p.demonstration}</p>
+
+                {/* Réalisation */}
+                <div className="flex items-start gap-2 mb-3">
+                  <Wrench className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-xs font-semibold text-purple-600 uppercase mb-1">Réalisation</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{p.details}</p>
+                  </div>
+                </div>
+
+                {/* Ce que ça démontre */}
+                <div className="flex items-start gap-2 mb-4">
+                  <Sparkles className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-xs font-semibold text-green-600 uppercase mb-1">Ce que ça démontre</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{p.demonstration}</p>
+                  </div>
+                </div>
 
                 {/* Results */}
                 <div className="flex flex-wrap gap-2">
