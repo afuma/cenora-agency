@@ -42,7 +42,7 @@ export default function Header() {
               <Zap className="w-4 h-4 text-white" />
             </div>
             <span className="text-lg font-bold text-foreground">
-              Digi<span className="gradient-text">Pulse</span>
+              Cen<span className="gradient-text">ora</span>
             </span>
           </a>
 

@@ -39,9 +39,9 @@ export default function Footer() {
               Agence digitale spécialisée en création de sites web et référencement local pour indépendants, TPE et PME.
             </p>
             <div className="mt-4 text-sm text-white/50">
-              <p>📍 Paris, France</p>
-              <p>📞 01 23 45 67 89</p>
-              <p>✉️ contact@Cenora.fr</p>
+              <p>📍 Lisieux, France</p>
+              <p>📞 06 04 01 43 63</p>
+              <p>✉️ contact@cenora.fr</p>
             </div>
           </div>
 
