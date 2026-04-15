@@ -6,46 +6,54 @@ const projects = [
   {
     id: 1,
     title: 'Le Bistrot des Halles',
-    category: 'Restaurant',
+    category: 'Restauration · Projet de démonstration',
     tag: 'Site vitrine + SEO local',
-    description: 'Site moderne avec menu en ligne, réservation et fiche Google Maps optimisée. +220% de réservations en 3 mois.',
+    description: 'Objectif : Rendre un restaurant visible sur Google et faciliter les réservations en ligne.',
+    details: 'Site responsive avec menu interactif, prise de réservation et fiche Google Business optimisée.',
+    demonstration: 'Maîtrise du SEO local et de la conversion.',
     image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80',
     color: 'bg-orange-50',
     tagColor: 'text-orange-600 bg-orange-100',
-    results: ['+220% de réservations', 'Top 1 Google Maps'],
+    results: ['SEO local ciblé', 'Réservation en ligne', 'Google Maps optimisé'],
   },
   {
     id: 2,
     title: 'Les Gîtes du Moulin',
-    category: 'Hébergement',
+    category: 'Hébergement rural · Projet de démonstration',
     tag: 'Site + Réservation en ligne',
-    description: 'Plateforme de réservation pour 4 gîtes ruraux avec galerie, disponibilités et SEO tourisme local.',
+    description: 'Objectif : Digitaliser une offre d\'hébergement rural pour attirer des vacanciers via Google.',
+    details: 'Plateforme de réservation avec galerie, disponibilités et stratégie SEO tourisme.',
+    demonstration: 'Capacité à créer des sites générateurs de réservations.',
     image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80',
     color: 'bg-green-50',
     tagColor: 'text-green-700 bg-green-100',
-    results: ['+180% de réservations', 'Page 1 sur 12 mots-clés'],
+    results: ['Système de réservation', 'SEO tourisme local', 'Stratégie mots-clés'],
   },
   {
     id: 3,
     title: 'Métal Industrie Pro',
-    category: 'Industrie',
+    category: 'Sous-traitance B2B · Projet de démonstration',
     tag: 'Site corporate + SEO B2B',
-    description: 'Présence digitale pour un sous-traitant industriel : catalogue produits, demandes de devis, référencement sectoriel.',
+    description: 'Objectif : Crédibiliser une PME industrielle auprès de donneurs d\'ordres et générer des devis qualifiés.',
+    details: 'Site corporate avec catalogue produits et formulaire de contact métier.',
+    demonstration: 'Approche SEO sectoriel B2B et positionnement premium.',
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80',
     color: 'bg-slate-50',
     tagColor: 'text-slate-700 bg-slate-200',
-    results: ['+85% de leads B2B', 'Top 3 sur secteur'],
+    results: ['Design corporate premium', 'SEO sectoriel B2B', 'Formulaire devis intégré'],
   },
   {
     id: 4,
     title: 'Dupont Plomberie',
-    category: 'Artisanat',
+    category: 'Artisan local · Projet de démonstration',
     tag: 'Site vitrine + SEO local',
-    description: "Site de plombier avec zone d'intervention, urgences, formulaire de devis et optimisation Google Maps complète.",
+    description: 'Objectif : Faire apparaître un plombier en tête des recherches locales et transformer les visites en appels.',
+    details: 'Site vitrine avec zone d\'intervention, urgences 24h/24 et optimisation Google Maps complète.',
+    demonstration: 'Expertise SEO pour artisans et métiers de proximité.',
     image: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80',
     color: 'bg-blue-50',
     tagColor: 'text-blue-700 bg-blue-100',
-    results: ['x4 appels entrants', 'Top 1 sur sa ville'],
+    results: ['Visibilité Google Maps', 'Appels directs optimisés', 'Zone d\'intervention ciblée'],
   },
 ];
 
@@ -107,7 +115,11 @@ export default function Portfolio() {
                     <span className="text-xs text-muted-foreground">{p.category}</span>
                   </div>
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{p.description}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-2">{p.description}</p>
+                <p className="text-sm font-medium text-foreground mb-2">Réalisation</p>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-2">{p.details}</p>
+                <p className="text-sm font-medium text-foreground mb-2">Ce que ça démontre</p>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{p.demonstration}</p>
 
                 {/* Results */}
                 <div className="flex flex-wrap gap-2">
