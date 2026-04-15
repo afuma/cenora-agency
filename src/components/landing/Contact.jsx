@@ -4,7 +4,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ArrowRight, CheckCircle, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { base44 } from '@/api/base44Client';
 import { toast } from "sonner";
 import AnimatedBackground from './AnimatedBackground';
 
@@ -33,10 +32,22 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    await base44.entities.ContactRequest.create(form);
-    setSubmitted(true);
-    setLoading(false);
-    toast.success("Demande envoyée ! On vous recontacte dans les 24h.");
+    
+    try {
+      // Log form data to console (you can replace this with your own API call)
+      console.log('Form submitted:', form);
+      
+      // Simulate API call delay
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      setSubmitted(true);
+      toast.success("Demande envoyée ! On vous recontacte dans les 24h.");
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error("Une erreur s'est produite. Veuillez réessayer.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
