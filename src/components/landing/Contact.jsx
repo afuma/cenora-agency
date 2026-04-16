@@ -33,18 +33,31 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    
+
     try {
-      // Log form data to console (you can replace this with your own API call)
-      console.log('Form submitted:', form);
-      
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      setSubmitted(true);
-      toast.success("Demande envoyée ! On vous recontacte dans les 24h.");
+      const res = await fetch("https://n8n.srv832177.hstgr.cloud.com/webhook/contact-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) {
+        throw new Error("Erreur serveur");
+      }
+
+      const data = await res.json();
+
+      if (data.success) {
+        setSubmitted(true);
+        toast.success("Demande envoyée ! On vous recontacte dans les 24h.");
+      } else {
+        throw new Error("Erreur réponse");
+      }
+
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error("Erreur:", error);
       toast.error("Une erreur s'est produite. Veuillez réessayer.");
     } finally {
       setLoading(false);

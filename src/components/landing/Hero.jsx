@@ -31,7 +31,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 mb-8"
           >
             <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs font-semibold text-primary">Agence web & SEO local · Paris</span>
+            <span className="text-xs font-semibold text-primary">Agence web & SEO local</span>
           </motion.div>
 
           {/* H1 */}

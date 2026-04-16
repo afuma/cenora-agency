@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Zap, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTheme } from 'next-themes';
 
 const navLinks = [
   { label: 'Accueil', href: '#accueil' },
@@ -14,19 +15,23 @@ const navLinks = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [dark, setDark] = useState(() => document.documentElement.classList.contains('dark'));
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 24);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const toggleDark = () => {
-    const isDark = !dark;
-    setDark(isDark);
-    document.documentElement.classList.toggle('dark', isDark);
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   };
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -62,11 +67,11 @@ export default function Header() {
           {/* Right actions */}
           <div className="hidden lg:flex items-center gap-2">
             <button
-              onClick={toggleDark}
+              onClick={toggleTheme}
               className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
               aria-label="Toggle dark mode"
             >
-              {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </button>
             <a href="#contact">
               <button className="btn-primary px-5 py-2.5 rounded-xl text-sm font-semibold">
@@ -78,10 +83,10 @@ export default function Header() {
           {/* Mobile right */}
           <div className="lg:hidden flex items-center gap-1">
             <button
-              onClick={toggleDark}
+              onClick={toggleTheme}
               className="p-2 rounded-lg text-muted-foreground hover:text-foreground transition-colors"
             >
-              {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </button>
             <button
               className="p-2 text-foreground"

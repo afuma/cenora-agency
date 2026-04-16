@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 
 const reviews = [
   {
-    name: 'Marie Dupont',
-    company: 'Salon Éclat',
+    name: 'Marie D.',
+    company: 'Salon de beauté',
     role: 'Gérante',
     text: "Le site est propre et facile à utiliser. J’ai déjà eu quelques nouveaux clients qui m’ont trouvé via Google, ce qui est déjà très positif pour moi. L’équipe a été réactive et à l’écoute.",
     rating: 5,
@@ -13,8 +13,8 @@ const reviews = [
     accent: 'text-blue-500',
   },
   {
-    name: 'Thomas Martin',
-    company: 'Plomberie Express',
+    name: 'Thomas M.',
+    company: 'Plomberie',
     role: 'Artisan plombier',
     text: "Site livré rapidement et conforme à mes attentes. J’ai commencé à recevoir des appels via le formulaire de contact, ce qui n’était pas le cas avant. Bonne expérience globale.",
     rating: 5,
@@ -22,8 +22,8 @@ const reviews = [
     accent: 'text-violet-500',
   },
   {
-    name: 'Sophie Bernard',
-    company: 'Les Gîtes du Moulin',
+    name: 'Sophie B.',
+    company: 'Gîtes',
     role: 'Propriétaire',
     text: "Le site donne une image beaucoup plus professionnelle de mes gîtes. Les réservations en direct commencent doucement à augmenter, surtout via Google. Très satisfait du résultat.",
     rating: 5,
