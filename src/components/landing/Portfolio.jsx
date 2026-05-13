@@ -15,6 +15,7 @@ const projects = [
     color: 'bg-orange-50',
     tagColor: 'text-orange-600 bg-orange-100',
     results: ['SEO local ciblé', 'Réservation en ligne', 'Google Maps optimisé'],
+    url: 'https://afuma.github.io/demo-restaurant/'
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ const projects = [
     color: 'bg-green-50',
     tagColor: 'text-green-700 bg-green-100',
     results: ['Système de réservation', 'SEO tourisme local', 'Stratégie mots-clés'],
+    url: 'https://afuma.github.io/demo-gites/
   },
   {
     id: 3,
@@ -41,6 +43,7 @@ const projects = [
     color: 'bg-slate-50',
     tagColor: 'text-slate-700 bg-slate-200',
     results: ['Design corporate premium', 'SEO sectoriel B2B', 'Formulaire devis intégré'],
+    url: 'https://afuma.github.io/demo-metal/
   },
   {
     id: 4,
@@ -54,6 +57,7 @@ const projects = [
     color: 'bg-blue-50',
     tagColor: 'text-blue-700 bg-blue-100',
     results: ['Visibilité Google Maps', 'Appels directs optimisés', 'Zone d\'intervention ciblée'],
+    url: 'https://afuma.github.io/demo-plombier/
   },
 ];
 
@@ -84,16 +88,32 @@ export default function Portfolio() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
           {projects.map((p, i) => (
-            <motion.div
+            <a
               key={p.id}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              onMouseEnter={() => setHovered(p.id)}
-              onMouseLeave={() => setHovered(null)}
-              className="card-soft rounded-2xl overflow-hidden bg-white group"
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
             >
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                onMouseEnter={() => setHovered(p.id)}
+                onMouseLeave={() => setHovered(null)}
+                className="card-soft rounded-2xl overflow-hidden bg-white group cursor-pointer hover:-translate-y-1 transition-all duration-300"
+              >
+                key={p.id}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                onMouseEnter={() => setHovered(p.id)}
+                onMouseLeave={() => setHovered(null)}
+                className="card-soft rounded-2xl overflow-hidden bg-white group"
+              </motion.div>
+            </a>
               {/* Image */}
               <div className="relative h-48 sm:h-56 overflow-hidden">
                 <img
